@@ -196,13 +196,13 @@ addButtonAction = function(e, templateId, table, tableHighlighter, tableId) {
   let roleInput = document.getElementById(tableId + 'text')
   let name = roleInput.value.trim();
   if (name == "") {
-    alert("Please enter a role name");
+    dialog.alert("Please enter a role name");
     return;
   }
   if (findElementsBySelector(tbody, "TR").find(function(n) {
       return n.getAttribute("name") == '[' + name + ']';
     }) != null) {
-    alert("Entry for '" + name + "' already exists");
+    dialog.alert("Entry for '" + name + "' already exists");
     return;
   }
   let pattern = "";
@@ -213,7 +213,7 @@ addButtonAction = function(e, templateId, table, tableHighlighter, tableId) {
     let patternInput = document.getElementById(tableId + 'pattern')
     pattern = patternInput.value;
     if (pattern == "") {
-      alert("Please enter a pattern");
+      dialog.alert("Please enter a pattern");
       return;
     }
     if (tableId === "projectRoles") {
@@ -401,11 +401,11 @@ showModal = function(title, itemlist) {
     messageElement.appendChild(line);
     messageElement.appendChild(document.createElement("br"));
   }
-  dialog.modal(messageElement, {title: title});
+  dialog.modal(messageElement, {title: title, minWidth: "600px"});
 }
 
 showAgentErrorMessageModal = function() {
-  dialogalert('Unable to fetch matching Agents.');
+  dialog.alert('Unable to fetch matching Agents.');
 }
 
 bindAgentListenerToPattern = function(elem) {
