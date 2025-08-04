@@ -35,6 +35,7 @@
   text-align: center!important;
 }
 
+
 .role-strategy-table thead .rsp-table--header-th.first {
   border-top-left-radius: var(--table-border-radius);
 }
@@ -79,9 +80,10 @@
 }
 
 .role-strategy-table .rsp-table__permission,
-.role-strategy-table .rsp-table--header-th
+.role-strategy-table .rsp-table--header-th,
+.rsp-table--rowhead
 {
-  background: var(--table-body-background);
+  background-color: oklch(from var(--background) 0.5 0.005 h / 0.1)!important;
 }
 
 .role-strategy-table .caption-row TH span,

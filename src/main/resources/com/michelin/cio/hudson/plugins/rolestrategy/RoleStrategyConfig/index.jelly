@@ -151,13 +151,13 @@
             <d:tag name="roleRow">
               <j:if test="${attrs.showRoleName}">
                 <l:isAdmin>
-                  <td class="start">
+                  <td class="start rsp-table--rowhead">
                     <div class="rsp-remove">
                       <l:icon src="symbol-trash-outline plugin-ionicons-api" class="icon-sm icon-red rsp-table__icon"/>
                     </div>
                   </td>
                 </l:isAdmin>
-                <td class="left-most" style="white-space: nowrap;">${title}</td>
+                <td class="left-most rsp-table--rowhead" style="white-space: nowrap;">${title}</td>
               </j:if>
               <j:set var="pattern" value=""/>
               <j:set var="patternTemplate" value=""/>
@@ -167,7 +167,7 @@
                 <j:if test="${attrs.pattern != '{{PATTERN}}'}">
                   <j:set var="pattern" value="&lt;br/&gt; &lt;b&gt;Pattern&lt;/b&gt;: ${h.escape(attrs.role.pattern.toString())}"/>
                 </j:if>
-                <td>
+                <td class="rsp-table--rowhead">
                   <div class="pattern-cell">
                       <l:icon src="symbol-pencil plugin-ionicons-api" class="icon-pencil icon-sm" tooltip="Edit pattern"/>
                       <span data-edit="false">
@@ -178,7 +178,7 @@
 
                 </td>
                 <j:if test="${attrs.showTemplate}">
-                  <td>
+                  <td class="rsp-table--rowhead">
                     <div class="pattern-cell">
                       ${attrs.templateName}
                       <input type="hidden" name="templateName" value="${attrs.templateName}" disabled="true"/>
@@ -204,7 +204,7 @@
               </j:forEach>
               <j:if test="${attrs.showRoleName}">
                 <l:isAdmin>
-                  <td class="stop">
+                  <td class="stop rsp-table--rowhead">
                     <div class="rsp-remove">
                       <l:icon src="symbol-trash-outline plugin-ionicons-api" class="icon-sm icon-red rsp-table__icon" htmlTooltip="&lt;b&gt;Role&lt;/b&gt;: ${h.escape(attrs.title)}"/>
                     </div>
